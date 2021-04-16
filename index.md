@@ -1,4 +1,4 @@
-## Coming soon!
+## Introduction
 
 This testbed provides HPC code developers and data-scientists with access to the latest data centre FPGAs in order to experiment with exploiting this hardware for accelerating their codes. In addition to the FPGA nodes themselves, the machine will also contain the required toolchains and licences pre-installed as well as hardware for building and testing FPGA codes before deployment to the FPGAs themselves.
 
