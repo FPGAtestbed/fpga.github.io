@@ -6,4 +6,4 @@ We will also have numerous memory technologies, including HBM and NV-RAM, on the
 
 ### Coming soon!
 
-The testbed will open for access in late May 2021, we are currently busy developing documentation which will also go live on this website in May. If you would like more information at this stage, or to be notified when access is possible, then email [fpga-testbed@mlist.is.ed.ac.uk](mailto:fpga-testbed@mlist.is.ed.ac.uk?subject=Website%20equiry)
+The testbed will open for access in late May 2021, we are currently busy developing documentation which will also go live on this website in May. If you would like more information at this stage, or to be notified when access is possible, then email [fpga-testbed@mlist.is.ed.ac.uk](mailto:fpga-testbed@mlist.is.ed.ac.uk?subject=Website%20enquiry)
