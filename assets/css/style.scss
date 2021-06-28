@@ -1,0 +1,15 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#nav_bar {
+  background-color: #171717;
+  color: #FDFDFB;
+  width: 165px;
+  float: left;
+  position: fixed;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 0px 0px 6px 4px;
+}
