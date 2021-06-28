@@ -4,7 +4,7 @@ The building of codes for the physical FPGA chips is a time consuming process. F
 
 ### Xilinx toolchain
 
-You should first load the _vitis_ module, `module load vitis`. This will make available Xilinx specific tooling, including _v++_, _vivado_, _vitis_hls_, _vitis_, and _vitis_analyser_ into your environment, as well as setting up the correct OpenCL environment for hardware emulation. We have developed a simple sum example to demonstrate using the Xilix toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful.
+You should first load the _vitis_ module, `module load vitis`. This will make available Xilinx specific tooling, including _v++_, _vivado_, _vitis_hls_, _vitis_, and _vitis_analyser_ into your environment, as well as setting up the correct OpenCL environment for hardware emulation. We have developed a simple number sum example [here](https://github.com/FPGAtestbed/xilinx_sum_example) to demonstrate using the Xilix toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful.
 
 ```console
 [username@nextgenio-login2 ~]$ git clone https://github.com/FPGAtestbed/xilinx_sum_example.git
@@ -22,7 +22,12 @@ Software emulation is the quickest, both in terms of build time (typically less 
 [username@nextgenio-login2 ~]$ make device TARGET=sw_emu 
 .....
 [username@nextgenio-login2 ~]$ export XCL_EMULATION_MODE=sw_emu
-[username@nextgenio-login2 ~]$ bin/host bin/sum_kernel.sw_emu.xclbin
+[username@nextgenio-login2 ~]$ bin/host bin/sum_kernel.sw_emu.xclbin 100
+Found Platform
+Platform Name: Xilinx
+INFO: Reading bin/sum_kernel.sw_emu.xclbin
+Loading: 'bin/sum_kernel.sw_emu.xclbin'
+Total runtime : 1.110740 sec, (0.403078 xfer on, 0.638774 execute, 0.068888 xfer off) for 100 elements
 ```
 
 #### Building and running for hardware emulation
@@ -37,5 +42,29 @@ The console snippet below illustrates running hardware emulation, note that if t
 [username@nextgenio-login2 ~]$ make device TARGET=hw_emu 
 .....
 [username@nextgenio-login2 ~]$ export XCL_EMULATION_MODE=hw_emu
-[username@nextgenio-login2 ~]$ bin/host bin/sum_kernel.hw_emu.xclbin
+[username@nextgenio-login2 ~]$ bin/host bin/sum_kernel.hw_emu.xclbin 10
+Found Platform
+Platform Name: Xilinx
+INFO: Reading bin/sum_kernel.hw_emu.xclbin
+Loading: 'bin/sum_kernel.hw_emu.xclbin'
+INFO: [HW-EMU 01] Hardware emulation runs simulation underneath. Using a large data set will result in long simulation times. It is recommended that a small dataset is used for faster execution. The flow uses approximate models for DDR memory and interconnect and hence the performance data generated is approximate.
+Total runtime : 1003.154663 ms, (1.948597 ms xfer on, 1000.808350 ms execute, 0.397680 ms xfer off) for 10 elements
+INFO: [HW-EMU 06-0] Waiting for the simulator process to exit
+INFO: [HW-EMU 06-1] All the simulator processes exited successfully
+```
+
+#### Building for the FPGA
+
+Building for actual hardware will take around 90 minutes for this example, which can be done via `make device TARGET=hw`. One challenge is that this building process is then connected to the console, so closing that will terminate the building of the bitstream. There are a number of ways around this, for instance by using the graphical desktop then when you quit out of X2GO it will typically keep the session open and running. However, a more complete way is to use the _nohup_ command. We would generally suggest redirecting stderr and tailing the output file too.
+
+```console
+[username@nextgenio-login2 ~]$ nohup make device TARGET=hw &> output &
+[username@nextgenio-login2 ~]$ tail -fn2000 output
+```
+
+This will build the bitstream as a background process, and by tailing the _output_ file then you can view in real time the progress. Vitis creates numerous sub-processes and a disadvantage of this nohup approach is if you then want to terminate the build, for instance if you realise there is an error in the code that needs corrected, then it can be very time consuming to kill each individual process. Instead, we have provided a _killall_ script in the common_fpga module which will kill all the processes running either foreground or background in the current terminal.
+
+```console
+[username@nextgenio-login2 ~]$ module load common_fpga
+[username@nextgenio-login2 ~]$ source killall.sh
 ```
