@@ -1,0 +1,12 @@
+
+docs_list_title: documentation_sidebar
+docs:
+  
+- title: Getting Started
+  url: getting_started.html
+  
+- title: Building and Emulation
+  url: build_emulation.html
+
+- title: Running on the FPGAs
+  url: running_fpgas.html
