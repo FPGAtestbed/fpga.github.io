@@ -11,18 +11,18 @@ Once you have logged into hydra-vpn then you can access the testbed login node v
 ```console
 username@localhost:~$ ssh username@hydra-vpn.epcc.ed.ac.uk
 [username@hydra-vpn ~]$ ssh username@nextgenio-login2
-[username@nextgenio-login2 ~]
+[username@nextgenio-login2 ~]$
 ```
 >**ADVICE:**  
 > It is possible to automate the proxy step by setting this up in your ssh .config file as a proxyjump
 
 ### Desktop access
 
-The lightweight XFCE desktop is installed on the front-end of the testbed system, which is especially useful for programming FPGAs as much of the tooling has a graphical component to it. The front-end is also running X2GO which tends to provide much better performance than vanilla X forwarding. Therefore we strongly suggest accessing the desktop via X2GO, with users just needing to install the client program which is available [https://wiki.x2go.org/doku.php/download:start](here). 
+<img src="/docs/images/x2go_settings.png" width="400" height="400" align="right"/>
+
+The lightweight XFCE desktop is installed on the front-end of the testbed system, which is especially useful for programming FPGAs as much of the tooling has a graphical component to it. The front-end is also running X2GO which tends to provide much better performance than vanilla X forwarding. Therefore we strongly suggest accessing the desktop via X2GO, with users just needing to install the client program which is available [here](https://wiki.x2go.org/doku.php/download:start). 
 
 Once the client is installed, create a new profile with settings matching those as illustrated below (assuming that you use the same username and password for both _hydra-vpn_ and the _NextGenIO_ node.
-
-![](/docs/images/x2go_settings.png)
 
 >**NOTE:**  
 > Whilst it is possible to run the individual graphical tools directly via X2GO, we strongly suggest doing this via the XFCE desktop environment as find that this provides a much better user experience.
