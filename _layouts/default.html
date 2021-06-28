@@ -39,6 +39,13 @@
               <li><a href="{{ item.url }}" class="nav_bar_menu">{{ item.title }}</a></li>
             {% endfor %}
           </ul>
+        
+        <span style="color:white; font-size: 18px; font-weight: bold;">Community</span>  
+          <ul>
+            {% for item in site.data.community_sidebar.docs %}
+              <li><a href="{{ item.url }}" class="nav_bar_menu">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>       
       </section>
       
       <section id="main_content" class="inner">
