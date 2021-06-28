@@ -24,12 +24,15 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <span style="color:white; font-size: 18px;">Documentation</span>  
+      <section id="nav_bar">
+        <span style="color:white; font-size: 18px;">Documentation</span>  
           <ul>
-            {% for item in site.data.documentation.docs %}
+            {% for item in site.data.documentation_sidebar.docs %}
               <li><a href="{{ item.url }}">{{ item.title }}</a></li>
             {% endfor %}
           </ul>
+      </section>
+      
       <section id="main_content" class="inner">
         {{ content }}
       </section>
