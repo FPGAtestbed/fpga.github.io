@@ -1,12 +1,15 @@
 
 docs_list_title: documentation_sidebar
 docs:
+
+- title: Applying for Access
+  url: docs/applying_for_access.html
   
 - title: Getting Started
-  url: getting_started.html
+  url: docs/getting_started.html
   
 - title: Building and Emulation
-  url: build_emulation.html
+  url: docs/build_emulation.html
 
 - title: Running on the FPGAs
-  url: running_fpgas.html
+  url: docs/running_fpgas.html
