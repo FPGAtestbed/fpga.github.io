@@ -28,3 +28,20 @@ Once the client is installed, create a new profile with settings matching those 
 > Whilst it is possible to run the individual graphical tools directly via X2GO, we strongly suggest doing this via the XFCE desktop environment as find that this provides a much better user experience.
 
 ### FPGA specific tooling
+
+FPGA tooling and useful associated applications are available on the front-end via the module environment. There are a default set of modules made available on login (which can be viewed via `module available`) and a set automatically into the user environment (which can be viewed via `module list`). More general details about the module environment can be found [here](https://linux.die.net/man/1/module). 
+
+The FPGA specific modules are not available by default and must be loaded, this can be done via the command below
+
+```console
+[username@nextgenio-login2 ~]$ source /home/nx08/shared/fpga/fpga_modules.sh
+[username@nextgenio-login2 ~]$ module available
+--------------------------------------------- /home/nx08/shared/fpga/modulefiles ---------------------------------------------
+   common_fpga/1.0       intelFPGA_pro/20.3  (D)    vitis/2020.2 (D)
+   intelFPGA_pro/19.4    ocl-icd/2.2.12             vitis/2021.1
+```
+
+>**ADVICE:**  
+> You can add this command into your _.bashrc_ file which will then make these modules available automatically.
+
+There are more details about the specifics of these modules on other pages, however _common_fpga/1.0_ deserves some discussion. This contains common applications that are generally useful when programming FPGAs. Currently this makes available firefox, GUI, and GUI-GUI.
