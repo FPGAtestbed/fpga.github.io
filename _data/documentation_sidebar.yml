@@ -13,3 +13,6 @@ docs:
 
 - title: Running on the FPGAs
   url: /docs/running_fpga.html
+  
+- title: Installed software
+  url: /docs/installed_software.html
