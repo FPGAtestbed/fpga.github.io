@@ -20,4 +20,4 @@ The system is hosted within an existing, established and modern HPC system which
 
 <img src="https://www.hpcadvisorycouncil.com/events/2017/isc17-student-cluster-competition/uploads/team_3_epcc_edinburg_logo.jpg" align="left">
 
-<img src="https://upload.wikimedia.org/wikipedia/sco/thumb/d/d1/University_College_London_logo.svg/1280px-University_College_London_logo.svg.png" width=350>
+<center><img src="https://upload.wikimedia.org/wikipedia/sco/thumb/d/d1/University_College_London_logo.svg/1280px-University_College_London_logo.svg.png" width=400></center>
