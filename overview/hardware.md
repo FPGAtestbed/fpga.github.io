@@ -26,3 +26,8 @@ The Xilinx Versal is a next-generation FPGA board that will be released later in
 
 The Stratix-10 is Intel's flagship FPGA and it is our plan to purchase the MX model which contains HBM2 and Optane NVRAM on the board. This will enable exploration of multiple memory spaces, especially interesting here will be the NVRAM which is slower than DDR4-DRAM but considerably larger. Therefore a key question for HPC codes will be whether the HBM2 and NVRAM can be used in conjunction to most effectively exploit the respective benefits of each. Whilst the Intel component of the testbed will be small, we only plan to have one Stratix-10 card, this is still interesting to compare and constrast against the Xilinx cards to help application developers explore a wide variety of properties to understand which most effectively suits their applications.
 </div>
+
+<div style="overflow: auto;">
+<h2>Networking</h2>
+We provide two networking solutions for inter-FPGA communications. Firstly each FPGA is interconnected via 100Gbps QSFP28 networking ports, allowing direct FPGA to FPGA communications. The installed Xilinx toolchain supports this out of the box and this represents a high performance way of enabling communication, either as part of parallelising a problem across the FPGAs or injecting input data. The second approach is to enable inter-FPGA communication via the host, which may or may not involve network communication depending upon whether FPGAs are located on different nodes. All nodes are connected via Omnipath which is a high performance networking protocol, but this will likely be significantly slower compared to the direct FPGA to FPGA communication especially as the PCIe link must be traversed. 
+</div>
