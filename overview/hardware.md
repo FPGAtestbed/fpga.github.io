@@ -2,16 +2,16 @@
 
 The testbed will contain the latest and next generation FPGAs. This page provides a brief overview of the different families hosted
 
-<div>
+<div style="overflow: auto;">
 <h2>Xilinx Alveo</h2>
 
 <img src="/overview/images/alveo-u280.jpg" width="400" height="300" align="right"/>
 
-We provide both Xilinx Alveo [U280](https://www.xilinx.com/products/boards-and-kits/alveo/u280.html) and [U250](https://www.xilinx.com/products/boards-and-kits/alveo/u250.html) FPGAs. In the past couple of years these current generation FPGA cards have demonstrated their ability to handle HPC and data centre workloads. The main difference between the two models is in external memory, where the U280 provides 8GB of HBM2 (high bandwidth memory) and 32GB of DDR4-DRAM, whereas the U250 contains no DRAM but provides 64GB of DDR4-DRAM. Whilst the FPGAs provided by both models are largely comparable, the U250 contains slightly more FPGA resource than the U280. The differences provided by these cards makes them interesting to explore, where the on-card 64GB DDR4-DRAM of the U250 can handle large problem sizes, and the HBM2 of the U280 can make a significant difference to the performance of some workloads.
+We provide both Xilinx Alveo <a href="https://www.xilinx.com/products/boards-and-kits/alveo/u280.html">U280</a> and <a href="https://www.xilinx.com/products/boards-and-kits/alveo/u250.html">U250</a> FPGAs. In the past couple of years these current generation FPGA cards have demonstrated their ability to handle HPC and data centre workloads. The main difference between the two models is in external memory, where the U280 provides 8GB of HBM2 (high bandwidth memory) and 32GB of DDR4-DRAM, whereas the U250 contains no DRAM but provides 64GB of DDR4-DRAM. Whilst the FPGAs provided by both models are largely comparable, the U250 contains slightly more FPGA resource than the U280. The differences provided by these cards makes them interesting to explore, where the on-card 64GB DDR4-DRAM of the U250 can handle large problem sizes, and the HBM2 of the U280 can make a significant difference to the performance of some workloads.
 
 </div>
 
-<div>
+<div style="overflow: auto;">
   <h2>Xilinx Versal</h2>
 
 <img src="/overview/images/versal.png" width="340" height="300" align="left" style="padding:5px;"/>
@@ -19,7 +19,7 @@ We provide both Xilinx Alveo [U280](https://www.xilinx.com/products/boards-and-k
 The Xilinx Versal is a next-generation FPGA board that will be released later in 2021 and we will be installing in the Autumn of this year. Known as an Adaptive Compute Acceleration Platform (ACAP), in addition to the configurable FPGA fabric the chip also provides four CPUs (two high performance A72 and two embedded style R5), along with a much improved on-chip high performance network, and AI engines. The last of these features, the AI engines, are the most exciting which act as simple high vectorised CPUs optimised for fixed-point and (single precision) floating-point arithmetic. Up to 400 AI engines are provided by the Versal chip, with the idea being that a workload can then be split across the FPGA fabric, A72 CPU, and AI engines, matching the parts of the workload which suit best to the specific hardware. The Versal has the potential to revolutionise how we write high performane codes for FPGAs, and will be very interesting to explore how the different components complement each other.
 
 </div>
-<div>
+<div style="overflow: auto;">
 <h2>Intel Stratix-10</h2>
 
 <img src="/overview/images/stratix-10.jpg" width="400" height="300" align="right"/>
