@@ -11,12 +11,12 @@
 }
 
 .contentpane {
-  display: flex;
-  justify-content: space-between; 
+  display: flex;  
 }
 
 .content {
   width:75%; 
+  padding-left: 20px;
 }
 
 .nav_bar {
