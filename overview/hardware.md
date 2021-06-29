@@ -10,6 +10,12 @@ We provide both Xilinx Alveo [U280](https://www.xilinx.com/products/boards-and-k
 
 ### Xilinx Versal
 
-<img src="/overview/images/versal.png" width="340" height="300" align="left"/>
+<img src="/overview/images/versal.png" width="340" height="300" align="left" style="padding:5px;"/>
 
 The Xilinx Versal is a next-generation FPGA board that will be released later in 2021 and we will be installing in the Autumn of this year. Known as an Adaptive Compute Acceleration Platform (ACAP), in addition to the configurable FPGA fabric the chip also provides four CPUs (two high performance A72 and two embedded style R5), along with a much improved on-chip high performance network, and AI engines. The last of these features, the AI engines, are the most exciting which act as simple high vectorised CPUs optimised for fixed-point and (single precision) floating-point arithmetic. Up to 400 AI engines are provided by the Versal chip, with the idea being that a workload can then be split across the FPGA fabric, A72 CPU, and AI engines, matching the parts of the workload which suit best to the specific hardware. The Versal has the potential to revolutionise how we write high performane codes for FPGAs, and will be very interesting to explore how the different components complement each other.
+
+### Intel Stratix-10
+
+<img src="/overview/images/stratix-10.jpg" width="400" height="300" align="right"/>
+
+The Stratix-10 is Intel's flagship FPGA and it is our plan to purchase the MX model which contains HBM2 and Optane NVRAM on the board. This will enable exploration of multiple memory spaces, especially interesting here will be the NVRAM which is slower than DDR4-DRAM but considerably larger. Therefore a key question for HPC codes will be whether the HBM2 and NVRAM can be used in conjunction to most effectively exploit the respective benefits of each.
