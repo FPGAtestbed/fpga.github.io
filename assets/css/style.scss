@@ -10,9 +10,9 @@
   margin: 0 auto;
 }
 
-.content {
-  display: inline-block;
-  width:75%;
+.contentpane {
+  display: flex;
+  justify-content: space-between; 
 }
 
 .nav_bar {
@@ -23,7 +23,6 @@
   border-bottom-right-radius: 4px;
   padding: 0px 0px 6px 4px;
   margin-top:10px;
-  display: inline-block;
 }
 
 .nav_bar_menu {
