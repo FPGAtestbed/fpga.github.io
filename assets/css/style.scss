@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+#header_wrap {
+ background: linear-gradient(to top, #B0E0E6, #B0E0E6); 
+}
+
 .inner {
   position: relative;
   max-width: 940px;
