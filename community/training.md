@@ -1,3 +1,11 @@
 ## Training
 
-Throughout the lifetime of the testbed we will run a number of training courses and use this page to publicise them and share materials. 
+As part of supporting the use and porting to the FPGA testbed we provide training and training materials associated with FPGA programming and optimisation.
+
+### Upcoming training events
+
+### Past training events
+
+- OneAPI workshop, Bristol, April 2022
+- OneAPI workshop, Edinburgh, April 2022
+   - [Programming FPGAs with DPC++](DPCandFPGAs.pdf)
