@@ -9,7 +9,9 @@ docs:
   url: /docs/getting_started.html
   
 - title: Building and Emulation
-  url: /docs/building_emulation.html
+  subfolderitems:
+    - page: Xilinx
+      url: /docs/building_emulation.html
 
 - title: Running on the FPGAs
   url: /docs/running_fpga.html
