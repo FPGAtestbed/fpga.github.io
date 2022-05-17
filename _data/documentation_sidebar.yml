@@ -11,7 +11,7 @@ docs:
 - title: Building and Emulation
   subfolderitems:
     - page: Xilinx
-      url: /docs/building_emulation.html
+      url: /docs/xilinx_building_emulation.html
 
 - title: Running on the FPGAs
   url: /docs/running_fpga.html
