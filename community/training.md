@@ -9,4 +9,4 @@ As part of supporting the use and porting to the FPGA testbed we provide trainin
 - OneAPI workshop, Bristol, April 2022
 - OneAPI workshop, Edinburgh, April 2022
    - [Programming FPGAs with DPC++](DPCandFPGAs.pdf)
-   - [General Performance portability] (performance_portability_talk.pdf)
+   - [General Performance portability](performance_portability_talk.pdf)
