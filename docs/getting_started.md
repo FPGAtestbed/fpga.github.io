@@ -37,8 +37,10 @@ The FPGA specific modules are not available by default and must be loaded, this 
 [username@nextgenio-login2 ~]$ source /home/nx08/shared/fpga/fpga_modules.sh
 [username@nextgenio-login2 ~]$ module available
 ----------------- /home/nx08/shared/fpga/modulefiles -----------------
-   common_fpga/1.0       intelFPGA_pro/20.3  (D)    vitis/2020.2 (D)
-   intelFPGA_pro/19.4    ocl-icd/2.2.12             vitis/2021.1
+   bittware/s10mx        common_fpga/1.0    host_support/0.1    
+   intelFPGA_pro/20.4    ocl-icd/2.2.12     vitis/2020.1    
+   vitis/2020.2 (D)      vitis/2021.1       vitis_libraries/2021.2    
+   xrt/2.11.634
 ```
 
 >**ADVICE:**  
