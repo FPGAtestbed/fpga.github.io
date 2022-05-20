@@ -68,3 +68,11 @@ This will build the bitstream as a background process, and by tailing the _outpu
 [username@nextgenio-login2 ~]$ module load common_fpga
 [username@nextgenio-login2 ~]$ source killall.sh
 ```
+
+## Troubleshooting
+
+If you are using the native XRT C++ API, and on building get an error like below, this is because the XRT libraries have been compiled without using the C++11 ABI, therefore it expects _std::string_ whereas the C++11 string is _std::__cxx11::basic_string_ and these things are seen as incompatible by the linker. To address this you need to compile your host code with _D_GLIBCXX_USE_CXX11_ABI=0_ passed as a command line argument which will build the code without the C++11 ABI and hence make it compatible with the XRT built library.
+
+```console
+ost_overlay.cpp:(.text+0x11a7): undefined reference to `xrt::device::load_xclbin(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+```
