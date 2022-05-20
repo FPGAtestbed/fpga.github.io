@@ -15,4 +15,4 @@ After connecting to the Xilinx nodes issue `module load vitis` and this will bri
 
 ## Intel environment
 
-After connecting to the Intel node issue `module load intelFPGA_pro` which will bring into your environment the settings to run on the Stratix-10 and you can then run your host-side executable.
+After connecting to the Intel node issue `module load quartus` which will bring into your environment the settings to run on the Stratix-10 and you can then run your host-side executable.
