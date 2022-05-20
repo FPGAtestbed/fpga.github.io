@@ -12,6 +12,8 @@ docs:
   subfolderitems:
     - page: Xilinx
       url: /docs/xilinx_building_emulation.html
+    - page: Intel
+      url: /docs/intel_building_emulation.html
 
 - title: Running on the FPGAs
   url: /docs/running_fpga.html
