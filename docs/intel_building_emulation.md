@@ -17,7 +17,7 @@ The example contains a makefile which provides configurations for building for e
 
 In Intel terminology _emulation_ is running in software, where the OpenCL device code is compiled against libraries and executed on the host. This is far quicker than building for hardware, however catches less errors and does not support all hardware modes (such as multi-kernel). 
 
-``console
+```console
 [username@nextgenio-login2 ~]$ make
 [username@nextgenio-login2 ~]$ aoc -march=emulator src/device/device.cl
 .....
