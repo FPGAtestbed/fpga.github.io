@@ -37,7 +37,7 @@ The core Xilinx Vitis toolchain which provides command line (_v++_) and GUI (_vi
 
 ### Intel Quartus
 
-The Intel Quartus toolchain providesthe Quartus Prime Design Software, along with the high level synthesis (HLS) compiler, the OpenCL framework, and other tools. Loading the intelFPGA_pro module will configure the system to utilise these.
+The Intel Quartus toolchain providesthe Quartus Prime Design Software, along with the high level synthesis (HLS) compiler, the OpenCL framework, and other tools. Loading the quartus module will configure the system to utilise these.
 
 | Software  | Version | Notes | Module name |
 | ------------- | ------------- | ------------- | ------------- |
