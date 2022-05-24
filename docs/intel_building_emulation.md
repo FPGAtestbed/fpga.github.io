@@ -22,13 +22,13 @@ In Intel terminology _emulation_ is running in software, where the OpenCL device
 [username@nextgenio-login2 ~]$ aoc -march=emulator src/device/device.cl
 .....
 [username@nextgenio-login2 ~]$ export CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA=1
-[username@nextgenio-login2 ~]$ ./host 10
+[username@nextgenio-login2 ~]$ ./host
 Execution mode: Emulation
 Using AOCX: device.aocx
 Kernel initialization is complete
 Memory initialization is complete
 Kernel execution has been scheduled
-Kernel execution has completed successfully
+Execution complete for 1000000 elements, total runtime : 16.717 ms, (5.843 ms xfer on, 4.947 ms execute, 5.927 ms xfer off)
 ```
 
 Note here how _make_ builds the host executable only, and the _aoc_ command is the Altera OpenCL compiler, with _march=emulator_ selecting to build for emulation. The _CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA_ environment variable is required as this informs the emulator how many devices to emulate.
