@@ -59,3 +59,6 @@ void my_kernel(__global __attribute__((buffer_location("HBM0"))) double * const 
                __global __attribute__((buffer_location("HBM2"))) double * restrict output1, 
                __global __attribute__((buffer_location("HBM3"))) double * restrict output2)
 ```
+
+>**NOTE:**  
+> You can see the use of _restrict_ in the above example, it is suggested to include that on global data for performance
