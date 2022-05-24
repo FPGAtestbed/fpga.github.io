@@ -45,3 +45,17 @@ Building for actual hardware will take around two hours for this example, a chal
 Note that in the host program it is very similar to launch the emulator or physical bitstream apart from the selection of the OpenCL platform. This is currently undertaken in the host program based on the _CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA_ environment variable.
 
 Detailed information about the _aoc_ compiler and other Quartus Prime Pro commands can be found in the [programming guide](https://www.intel.com/content/www/us/en/docs/programmable/683846/22-1/overview.html) and [best practice guide](https://www.intel.com/content/www/us/en/docs/programmable/683176/18-1/introduction-to-standard-edition-best.html).
+
+### Leveraging the HBM2
+
+The Stratix-10 MX has 16GB of HBM2 sitting across 32-banks, therefore each bank has 512MB. By default all global memory will be allocated in HBM bank 0, which will cause issues with both performance (contention across input and output data) and also limits the size of global memory to that specific bank. You can specify which bank to allocate into via the `__attribute__((buffer_location("HBM0")))` attribute on the arguments of the OpenCL kernel).
+
+The following code will allocate data across HBM banks 0 to 4 respectively. You do not need to add any specific HBM bank information into the host driver code, however the buffer should be created with the `CL_MEM_READ_WRITE | CL_MEM_HETEROGENEOUS_INTELFPGA` flags.
+
+```c
+__kernel 
+void my_kernel(__global __attribute__((buffer_location("HBM0"))) double * const restrict input1, 
+               __global __attribute__((buffer_location("HBM1"))) double * const restrict input2, 
+               __global __attribute__((buffer_location("HBM2"))) double * restrict output1, 
+               __global __attribute__((buffer_location("HBM3"))) double * restrict output2)
+```
