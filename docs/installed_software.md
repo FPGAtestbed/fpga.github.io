@@ -31,7 +31,7 @@ The core Xilinx Vitis toolchain which provides command line (_v++_) and GUI (_vi
 | ------------- | ------------- | ------------- | ------------- | 
 | XRT | 2.11.634  | Default | xrt/2.11.634 |
 | XRT | 2.12.447  | Required for VCK5000 | xrt/2.12.447 |
-| XRT | 2.13.446  | Default | xrt/2.13.446 |
+| XRT | 2.13.446  |  | xrt/2.13.446 |
 
 *Note*: Loading Vitis module will also automatically load GCC 10.2, ocl-icd, host_support, common_fpga, and XRT
 
