@@ -68,4 +68,4 @@ void my_kernel(__global __attribute__((buffer_location("HBM0"))) double * const 
 
 For most codes it is suggested to use the _-global-ring_ option which selects a ring topology interconnect between the kernel and shell that is optimized for the Stratix-10 and can improve fmax. You can also use _-duplicate-ring_ to select a duplicate right approach however you will get a message that _the compiler now duplicates the store ring by default_ so that is not strictly nescesary.
 
-Depending on your calculations, you can use _-ffp-reassoc_ to relax the order of floating point arithmetic operations and -ffp-contract=fast_ to remove intermediary floating-point rounding operations and conversions if possible, and to carry additional bits to maintain precision. These two options can often speed up calculation code in kernels
+Depending on your calculations, you can use _-ffp-reassoc_ to relax the order of floating point arithmetic operations and _-ffp-contract=fast_ to remove intermediary floating-point rounding operations and conversions if possible, and to carry additional bits to maintain precision. These two options can often speed up calculation code in kernels
