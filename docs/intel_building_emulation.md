@@ -38,9 +38,10 @@ Note here how _make_ builds the host executable only, and the _aoc_ command is t
 Building for actual hardware will take around two hours for this example, a challenge is that this building process is then connected to the console, so closing that will terminate the building of the bitstream. There are a number of ways around this, for instance by using the graphical desktop then when you quit out of X2GO it will typically keep the session open and running. However, a more complete way is to use the _nohup_ command. We would generally suggest redirecting stderr and tailing the output file too.
 
 ```console
-[username@nextgenio-login2 ~]$ nohup aoc src/device/device.cl &> output &
+[username@nextgenio-login2 ~]$ nohup aoc -board=p520_hpc_m210h_g3x16 src/device/device.cl &> output &
 [username@nextgenio-login2 ~]$ tail -fn2000 output
 ```
+The provision of _-board=p520_hpc_m210h_g3x16_ argument to _aoc_ is not strictly nesecesary here as the hpc target is selected by default, but it's good practice and you will need to provide this argument if you wish to build for the max target.
 
 Note that in the host program it is very similar to launch the emulator or physical bitstream apart from the selection of the OpenCL platform. This is currently undertaken in the host program based on the _CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA_ environment variable.
 
@@ -62,3 +63,9 @@ void my_kernel(__global __attribute__((buffer_location("HBM0"))) double * const 
 
 >**NOTE:**  
 > You can see the use of _restrict_ in the above example, it is suggested to include that on global data for performance
+
+### Building options
+
+For most codes it is suggested to use the _-global-ring_ option which selects a ring topology interconnect between the kernel and shell that is optimized for the Stratix-10 and can improve fmax. You can also use _-duplicate-ring_ to select a duplicate right approach however you will get a message that _the compiler now duplicates the store ring by default_ so that is not strictly nescesary.
+
+Depending on your calculations, you can use _-ffp-reassoc_ to relax the order of floating point arithmetic operations and -ffp-contract=fast_ to remove intermediary floating-point rounding operations and conversions if possible, and to carry additional bits to maintain precision. These two options can often speed up calculation code in kernels
