@@ -1,5 +1,7 @@
 ## VCK5000 Building and Emulation
 
+<img src="/docs/images/versal_architecture.png" width=450 align="right"/>
+
 The VCK5000 contains a VC1902 Versal AI-core ACAP and 16GB of DDR-DRAM. This is an interesting architecture as it provides AI engines which are 7-way VLIW processors which can perform vectorised fixed-point and (single precision) floating-point arithmetic. It is suggested that you are already familiar with programming the non-Versal Alveo cards (e.g. the U280 or U250) before working with the VCK5000 as the concepts there will be required.
 
 ### Versal chip specifications
