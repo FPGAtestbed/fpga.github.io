@@ -11,7 +11,9 @@ docs:
 - title: Building and Emulation
   subfolderitems:
     - page: Xilinx
-      url: /docs/xilinx_building_emulation.html
+      url: /docs/xilinx_building_emulation.html      
+    - page: VCK5000
+      url: /docs/vck5000_building_emulation.html
     - page: Intel
       url: /docs/intel_building_emulation.html
 
