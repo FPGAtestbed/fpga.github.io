@@ -21,7 +21,8 @@ The core Xilinx Vitis toolchain which provides command line (_v++_) and GUI (_vi
 | Vitis  | 2020.1  | Required for TCP/IP stack | vitis/2020.1 |
 | Vitis  | 2020.2  | Default | vitis/2020.2 |
 | Vitis  | 2021.1  |  | vitis/2021.1 |
-| Vitis  | 2021.2  | Required for programming VCK5000 | vitis/2021.2 |
+| Vitis  | 2021.2  | | vitis/2021.2 |
+| Vitis  | 2022.1  | Required for programming VCK5000 | vitis/2022.1 |
 
 | Software  | Version | Notes | Module name |
 | ------------- | ------------- | ------------- | ------------- | 
@@ -30,10 +31,11 @@ The core Xilinx Vitis toolchain which provides command line (_v++_) and GUI (_vi
 | Software  | Version | Notes | Module name |
 | ------------- | ------------- | ------------- | ------------- | 
 | XRT | 2.11.634  | Default | xrt/2.11.634 |
-| XRT | 2.12.447  | Required for VCK5000 | xrt/2.12.447 |
+| XRT | 2.12.447  |  | xrt/2.12.447 |
 | XRT | 2.13.446  |  | xrt/2.13.446 |
+| XRT | 2.13.478  | Required for VCK5000 | xrt/2.13.478 |
 
-*Note*: Loading Vitis module will also automatically load GCC 10.2, ocl-icd, host_support, common_fpga, and XRT
+*Note*: Loading Vitis module will also automatically load GCC 10.2, ocl-icd, host_support, common_fpga, and XRT. The exception is Vitis/2022.1 which will load GCC 7.3 rather than GCC 10.2 due the compatability issues.
 
 ### Intel Quartus
 
