@@ -2,11 +2,11 @@
 
 <img src="/docs/images/versal_architecture.png" width=450 align="right"/>
 
-The VCK5000 contains a VC1902 Versal AI-core ACAP and 16GB of DDR-DRAM. This is an interesting architecture as it provides AI engines which are 7-way VLIW processors which can perform vectorised fixed-point and (single precision) floating-point arithmetic. It is suggested that you are already familiar with programming the non-Versal Alveo cards (e.g. the U280 or U250) before working with the VCK5000 as the concepts there will be required.
+The VCK5000 contains a VC1902 Versal AI-core ACAP and 16GB of DDR-DRAM. This is an interesting architecture as it provides AI engines which are VLIW processors that can perform vectorised arithmetic. It is suggested that you are already familiar with programming the non-Versal Alveo cards (e.g. the U280 or U250) before working with the VCK5000 as the concepts there will be required.
 
 ### Versal chip specifications
 
-The VC1902 Versals we have are of the AI-core family and combine Programmable Subsystem (PS), Programmable Logic (PL), and AI engines. The PS comprises a dual-Core ARM Cortex-A72 and dual-Core ARM Cortex-R5, the PL provides 900K LUTs, 1968 DSPs, 4.2MB BRAM, and 16.3MB URAM. There are 400 AI engines each of which is running at 1.2GHz. The board itself also provides 16GB of DDR-DRAM and PCIe-Gen4.
+The VC1902 Versals we have are of the AI-core family and combine Programmable Subsystem (PS), Programmable Logic (PL), and AI engines. The PS comprises a dual-Core ARM Cortex-A72 and dual-Core ARM Cortex-R5, the PL provides 900K LUTs, 1968 DSPs, 4.2MB BRAM, and 16.3MB URAM. There are 400 AI engines each of which is a 7-way VLIW core running at 1.2GHz and capable for performing vectorised fixed-point and (single precision) floating-point arithmetic operations. The board itself also provides 16GB of DDR-DRAM and PCIe-Gen4.
 
 For more details about AIE development then see the [programmers guide](https://docs.xilinx.com/r/en-US/ug1076-ai-engine-environment) and [best practice guide](https://docs.xilinx.com/r/en-US/ug1079-ai-engine-kernel-coding).
 
