@@ -18,7 +18,7 @@ You should first load the _vitis/2022.1_ module, `module load vitis/2022.1`. Thi
 >**NOTE:**  
 > There are some incompatibilities with GNU and associated modules. By default the _vitis/2022.1_ module will load the _gnu7/7.3.0_ which works fine, however other versions of GCC on the machine indexed under _/home/software/modulefiles_ load modules which result in bitstreams that are not compatible.
 
-We have developed a simple number sum example [here](https://github.com/FPGAtestbed/vck5000_sum_example) to demonstrate using the Xilix VCK5000 toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful. It should be noted that this is more involved than building for the Alveos due to the inclusion of the AI engines.
+We have developed a simple number sum example [here](https://github.com/FPGAtestbed/vck5000_sum_example) to demonstrate using the Xilinx VCK5000 toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful. It should be noted that this is more involved than building for the Alveos due to the inclusion of the AI engines.
 
 ```console
 [username@nextgenio-login2 ~]$ git clone https://github.com/FPGAtestbed/vck5000_sum_example.git
