@@ -110,6 +110,10 @@ If you modify your AIE code and rebuilt it, then as long as you haven't changed 
 
 To do this for our example here, in the _hw_ directory you can use the _repackage_ rule, e.g. by issuing _make repackage TARGET=hw_emu_ (this also works when building for hardware too).
 
+```console
+[username@nextgenio-login2 ~]$ make repackage TARGET=hw_emu
+````
+
 ## Troubleshooting
 
 If you are using the native XRT C++ API, and on building get an error like below, this is because the XRT libraries have been compiled without using the C++11 ABI, therefore it expects _std::string_ whereas the C++11 string is _std::__cxx11::basic_string_ and these things are seen as incompatible by the linker. To address this you need to compile your host code with _D_GLIBCXX_USE_CXX11_ABI=0_ passed as a command line argument which will build the code without the C++11 ABI and hence make it compatible with the XRT built library.
