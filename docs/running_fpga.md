@@ -4,8 +4,8 @@ The FPGAs are hosted as back-end nodes of NEXTGenIO and currently accessible via
 
 | Node  | FPGAs | 
 | ------------- | ------------- | 
-| nextgenio-amd01  | Alveo U280  | 
-| nextgenio-amd02  | Alveo U250  | 
+| nextgenio-amd01  | Alveo U280 and U250 | 
+| nextgenio-amd02  |  VCK5000 and ADM-PA100 | 
 | nextgenio-amd03  | Stratix-10 MX  | 
 | nextgenio-icx | Unallocated |
 
