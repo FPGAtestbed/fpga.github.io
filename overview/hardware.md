@@ -1,6 +1,6 @@
 ## Testbed Hardware
 
-The testbed will contain the latest and next generation FPGAs. This page provides a brief overview of the different families hosted
+The testbed contains the latest and next generation FPGAs. This page provides a brief overview of the different families hosted
 
 <div style="overflow: auto;">
 <h2>Xilinx Alveo</h2>
