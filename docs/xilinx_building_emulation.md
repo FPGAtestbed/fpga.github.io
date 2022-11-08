@@ -53,6 +53,20 @@ INFO: [HW-EMU 06-0] Waiting for the simulator process to exit
 INFO: [HW-EMU 06-1] All the simulator processes exited successfully
 ```
 
+If your run fails like this when you try to execute the compiled binary:
+```console
+CRITICAL WARNING: [SW-EM 09-0] Unable to find emconfig.json. Using default device "xilinx:pcie-hw-em:7v3:1.0"
+terminate called after throwing an instance of 'std::_Nested_exception<HostSupportException>'
+  what():  No devices found matching name 'u280' for platform with name 'Xilinx'
+Aborted (core dumped)
+```
+
+Then you may need to create a configuration file for the FPGA platform you are emulating. You can do this as follows:
+```console
+[username@nextgenio-login2 ~]$ emconfigutil --platform xilinx_u280_xdma_201920_3
+[username@nextgenio-login2 ~]$ cp emconfig.json bin/
+```
+
 #### Building for the FPGA
 
 Building for actual hardware will take around 90 minutes for this example, which can be done via `make device TARGET=hw`. One challenge is that this building process is then connected to the console, so closing that will terminate the building of the bitstream. There are a number of ways around this, for instance by using the graphical desktop then when you quit out of X2GO it will typically keep the session open and running. However, a more complete way is to use the _nohup_ command. We would generally suggest redirecting stderr and tailing the output file too.
