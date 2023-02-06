@@ -4,7 +4,7 @@ The building of codes for the physical FPGA chips is a time consuming process. F
 
 ### Intel toolchain
 
-You should first load the _quartus_ module, `module load quartus`. This will make available Intel specific tooling, including _aoc_ and _aocl_ into your environment, as well as setting up the correct OpenCL environment for hardware emulation and Stratix-10 board environment. We have developed a simple number sum example [here](https://github.com/FPGAtestbed/intel_sum_example) to demonstrate using the Intel toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful.
+You should first load the _quartus_ module, `module load quartus` (for this to work you need the module files loaded, if this has not been done run this command before trying to load the _quartus_ module `module use /home/nx08/shared/fpga/modulefiles/`). This will make available Intel specific tooling, including _aoc_ and _aocl_ into your environment, as well as setting up the correct OpenCL environment for hardware emulation and Stratix-10 board environment. We have developed a simple number sum example [here](https://github.com/FPGAtestbed/intel_sum_example) to demonstrate using the Intel toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful.
 
 ```console
 [username@nextgenio-login2 ~]$ git clone https://github.com/FPGAtestbed/intel_sum_example.git

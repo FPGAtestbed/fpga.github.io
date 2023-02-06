@@ -17,6 +17,6 @@ You can use the `xbutil` utility to manage the FPGAs, for instance if your code 
 
 ## Intel environment
 
-After connecting to the Intel node issue `module load quartus` which will bring into your environment the settings to run on the Stratix-10 and you can then run your host-side executable. Currently the HPC OpenCL image is written onto the board, it is possible to load the MAX image which enables the QSP28 network ports and for this then please contact us.
+After connecting to the Intel node issue `module load quartus` (remembering that the module files need to already be available to enable this, i.e. you need to have already run `module use /home/nx08/shared/fpga/modulefiles/`) which will bring into your environment the settings to run on the Stratix-10 and you can then run your host-side executable. Currently the HPC OpenCL image is written onto the board, it is possible to load the MAX image which enables the QSP28 network ports and for this then please contact us.
 
 You can use `aocl diagnose` to report the status of the FPGA(s) present
