@@ -2,7 +2,9 @@
 
 The building of codes for the physical FPGA chips is a time consuming process. Firstly it is useful to have a powerful system for undertaking the actual build process, which is the case for this testbed, and also vendors provide emulation support such that users can much more quickly build and test their codes on the CPU without having to do the full build for the FPGA.
 
-### Intel toolchain
+### OpenCL
+
+#### Intel toolchain
 
 You should first load the _quartus_ module, `module load quartus` (for this to work you need the module files loaded, if this has not been done run this command before trying to load the _quartus_ module `module use /home/nx08/shared/fpga/modulefiles/`). This will make available Intel specific tooling, including _aoc_ and _aocl_ into your environment, as well as setting up the correct OpenCL environment for hardware emulation and Stratix-10 board environment. We have developed a simple number sum example [here](https://github.com/FPGAtestbed/intel_sum_example) to demonstrate using the Intel toolchain on the testbed, this can also be used as a skeleton structure for more complex FPGA codes if that is helpful.
 
@@ -13,7 +15,7 @@ You should first load the _quartus_ module, `module load quartus` (for this to w
 
 The example contains a makefile which provides configurations for building for emulation and physical hardware. 
 
-#### Building and running for emulation
+##### Building and running for emulation
 
 In Intel terminology _emulation_ is running in software, where the OpenCL device code is compiled against libraries and executed on the host. This is far quicker than building for hardware, however catches less errors and does not support all hardware modes (such as multi-kernel). 
 
@@ -33,7 +35,7 @@ Execution complete for 1000000 elements, total runtime : 16.717 ms, (5.843 ms xf
 
 Note here how _make_ builds the host executable only, and the _aoc_ command is the Altera OpenCL compiler, with _march=emulator_ selecting to build for emulation. The _CL_CONTEXT_EMULATOR_DEVICE_INTELFPGA_ environment variable is required as this informs the emulator how many devices to emulate.
 
-#### Building for the FPGA
+##### Building for the FPGA
 
 Building for actual hardware will take around two hours for this example, a challenge is that this building process is then connected to the console, so closing that will terminate the building of the bitstream. There are a number of ways around this, for instance by using the graphical desktop then when you quit out of X2GO it will typically keep the session open and running. However, a more complete way is to use the _nohup_ command. We would generally suggest redirecting stderr and tailing the output file too.
 
@@ -64,8 +66,12 @@ void my_kernel(__global __attribute__((buffer_location("HBM0"))) double * const 
 >**NOTE:**  
 > You can see the use of _restrict_ in the above example, it is suggested to include that on global data for performance
 
-### Building options
+#### Building options
 
 For most codes it is suggested to use the _-global-ring_ option which selects a ring topology interconnect between the kernel and shell that is optimized for the Stratix-10 and can improve fmax. You can also use _-duplicate-ring_ to select a duplicate right approach however you will get a message that _the compiler now duplicates the store ring by default_ so that is not strictly nescesary.
 
 Depending on your calculations, you can use _-ffp-reassoc_ to relax the order of floating point arithmetic operations and _-ffp-contract=fast_ to remove intermediary floating-point rounding operations and conversions if possible, and to carry additional bits to maintain precision. These two options can often speed up calculation code in kernels
+
+### oneAPI
+
+We can also use Intel's oneAPI approach for cross-platform programming, which utilises SYCL (and thereby OpenCL) to port code to FPGAs. We can use the example oneAPI sample programs to test out this method for exploiting FPGA, which can be found [here](https://github.com/oneapi-src/oneAPI-samples/tree/master/DirectProgramming/C%2B%2BSYCL_FPGA) 
