@@ -9,3 +9,6 @@ docs:
 
 - title: Reports
   url: /community/reports.html  
+  
+- title: HLS Fortran
+  url: /community/hls_fortran.html
