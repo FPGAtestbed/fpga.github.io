@@ -12,7 +12,9 @@ username@localhost:~$ ssh -J gateway-username@gateway.epcc.ed.ac.uk nextgenio-us
 ```
 >**ADVICE:**  
 > You can have the same username for both the gateway and nextgenio systems, although you don't have to
+
 > You will be prompted for your password when login in, this is the password for your NEXTGenIO account, which you can look up through the SAFE website when you initially accces
+
 > It is possible to automate the jump step by setting this up in your ssh .config file as a proxyjump
 
 ### Desktop access
